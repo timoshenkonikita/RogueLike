@@ -7,10 +7,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     Rigidbody2D rb;
+
     [HideInInspector]
     public float lastHorizontalVector;
+
     [HideInInspector]
     public float lastVerticalVector;
+
     [HideInInspector]
     public Vector2 moveDir;
     [HideInInspector]
@@ -20,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        lastMovedVector = new Vector2(1, 0f);
+        //lastMovedVector = new Vector2(1, 0f);
         
     }
 
@@ -36,33 +39,33 @@ public class PlayerMovement : MonoBehaviour
 
     void InputManagement()
     {
-        float moveX, moveY;
-        if (VirtualJoystick.CountActiveInstances() > 0)
-        {
-            moveX = VirtualJoystick.GetAxisRaw("Horizontal");
-            moveY = VirtualJoystick.GetAxisRaw("Vertical");
-        }
-        else
-        {
-            moveX = Input.GetAxisRaw("Horizontal");
-            moveY = Input.GetAxisRaw("Vertical");
-        }
+        //float moveX, moveY;
+        //if (VirtualJoystick.CountActiveInstances() > 0)
+        //{
+            float moveX = VirtualJoystick.GetAxisRaw("Horizontal");
+            float moveY = VirtualJoystick.GetAxisRaw("Vertical");
+        //}
+        //else
+        //{
+        //    moveX = Input.GetAxisRaw("Horizontal");
+        //    moveY = Input.GetAxisRaw("Vertical");
+        //}
         moveDir = new Vector2(moveX, moveY).normalized;
 
         if (moveDir.x != 0)
         {
             lastHorizontalVector = moveDir.x;
-            lastMovedVector = new Vector2(lastHorizontalVector, 0f); //последнее передвижение по x
+            //lastMovedVector = new Vector2(lastHorizontalVector, 0f); //последнее передвижение по x
         }
         if (moveDir.y != 0)
         {
-            lastHorizontalVector = moveDir.y;
-            lastMovedVector = new Vector2(0f, lastVerticalVector); //последнее передвижение по y
+            lastVerticalVector = moveDir.y;
+            //lastMovedVector = new Vector2(0f, lastVerticalVector); //последнее передвижение по y
         }
-        if (moveDir.x != 0 && moveDir.y != 0)
-        {
-            lastMovedVector = new Vector2(lastHorizontalVector, lastVerticalVector);
-        }
+        //if (moveDir.x != 0 && moveDir.y != 0)
+        //{
+        //    lastMovedVector = new Vector2(lastHorizontalVector, lastVerticalVector);
+        //}
     }
     void Move()
     {
