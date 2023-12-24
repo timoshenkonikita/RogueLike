@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8254a1e45d97d4cbd3f72018f027e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  enemyData: {fileID: 11400000, guid: 59e3ada4bc3d1fe49a85e4ab4929981a, type: 2}
 --- !u!1 &199616820
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,11 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3933dc90bf205d408dad2751a442edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 119663638475120840, guid: 93fe634f6b2c63d459bf47bfafff3a5d, type: 3}
-  damage: 0
-  speed: 10
-  cooldownDuration: 2
-  pierce: 0
+  weaponData: {fileID: 11400000, guid: 08c5310f67e6de741bee32923b7f9d8f, type: 2}
 --- !u!1001 &314928905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -260,11 +256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3296487958587398380, guid: ed7fb4326db8fa04b8aff0867980ba21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.493622
+      value: 12.13
       objectReference: {fileID: 0}
     - target: {fileID: 3296487958587398380, guid: ed7fb4326db8fa04b8aff0867980ba21, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.4351974
+      value: -8.56
       objectReference: {fileID: 0}
     - target: {fileID: 3296487958587398380, guid: ed7fb4326db8fa04b8aff0867980ba21, type: 3}
       propertyPath: m_LocalPosition.z
@@ -344,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1107963685}
-  offset: {x: 0, y: 0, z: -10}
+  offset: {x: 0, y: 0, z: -20}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -810,11 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295db63db6d7b5c4bb55ff442843c88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 434913115188882709, guid: 3d53a564bbe6ce74eb9c3b493c788d81, type: 3}
-  damage: 0
-  speed: 0
-  cooldownDuration: 5
-  pierce: 0
+  weaponData: {fileID: 11400000, guid: 062ce8b144bbc9d45adf4f03d6fe10df, type: 2}
 --- !u!1 &1464483582 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1993709746425295969, guid: 566408a3506607044ac67eabf82c3dc9, type: 3}
