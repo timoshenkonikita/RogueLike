@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Weapons\WeaponBase\MeleeWeaponBehaviour.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponController\GarlicController.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponBehavior\KnifeBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\VirtualJoystick\Scripts\VirtualJoystick.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponBehavior\GarlicBehavior.cs" />
