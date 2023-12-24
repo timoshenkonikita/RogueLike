@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638389448504369104
-    m_Hash: 4103822989
+      ticks: 638390233179221088
+    m_Hash: 2399981902
   m_LockFileStatus:
     m_FilePath: D:/Mobile_game/RogueLike/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638389448504499099
-    m_Hash: 1168083268
+      ticks: 638390233179231092
+    m_Hash: 2891404830
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

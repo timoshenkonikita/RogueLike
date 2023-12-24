@@ -152,10 +152,10 @@ TextureImporter:
       name: trees_plants_1
       rect:
         serializedVersion: 2
-        x: 321
-        y: 96
-        width: 32
-        height: 32
+        x: 327
+        y: 99
+        width: 20
+        height: 26
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: trees_plants_2
       rect:
         serializedVersion: 2
-        x: 386
-        y: 0
-        width: 32
-        height: 32
+        x: 391
+        y: 1
+        width: 24
+        height: 25
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}

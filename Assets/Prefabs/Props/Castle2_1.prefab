@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7046852733253513959}
   - component: {fileID: 3652878983931842897}
+  - component: {fileID: -5000327908716090428}
   m_Layer: 0
   m_Name: Castle2_1
   m_TagString: Untagged
@@ -82,3 +83,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-5000327908716090428
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041608463206196559}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.084}
+  m_SpriteTilingProperty:
+    border: {x: 0.15625, y: 0.09375, z: 0.15625, w: 0.0625}
+    pivot: {x: 0.5, y: 0.4}
+    oldSize: {x: 0.625, y: 0.65625}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.502}
+  m_EdgeRadius: 0
