@@ -57,13 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Weapon\KnifeBehaviour.cs" />
+    <Compile Include="Assets\Scripts\ChunkTrigger.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\PropRandomizer.cs" />
     <Compile Include="Assets\Scripts\Weapon\KnifeController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Weapon\ProjectileWeaponBehaviour.cs" />
     <Compile Include="Assets\VirtualJoystick\Scripts\VirtualJoystick.cs" />
     <Compile Include="Assets\VirtualJoystick\Scripts\VirtualJoystickEditor.cs" />
+    <Compile Include="Assets\Scripts\MapController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
