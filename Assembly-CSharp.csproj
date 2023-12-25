@@ -82,7 +82,7 @@
     <Compile Include="Assets\Scripts\Weapons\WeaponBehavior\GarlicBehavior.cs" />
     <Compile Include="Assets\VirtualJoystick\Scripts\VirtualJoystickEditor.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
-    <Compile Include="Assets\Prefabs\Pick-ups\Pickup.cs" />
+    <Compile Include="Assets\Scripts\Pick-ups\Pickup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
