@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
@@ -7,9 +5,9 @@ public class EnemyStats : MonoBehaviour
     public EnemyScriptableObject enemyData;
 
     //Current stats
-    float currentMoveSpeed;
-    float currentHealth;
-    float currentDamage;
+    [HideInInspector] public float currentMoveSpeed;
+    [HideInInspector] public float currentHealth;
+    [HideInInspector] public float currentDamage;
 
     void Awake()
     {
@@ -32,6 +30,12 @@ public class EnemyStats : MonoBehaviour
     public void Kill()
     {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        EnemySpawner spawner = FindObjectOfType<EnemySpawner>();
+        spawner.OnEnemyKilled();
     }
     private void OnCollisionStay2D(Collision2D col)
     {

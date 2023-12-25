@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,14 +5,15 @@ public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
 
-    //текущие характеристики
-    float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
-    float currentMight;
-    float currentProjectileSpeed;
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    [HideInInspector] public float currentHealth;
+    [HideInInspector] public float currentRecovery;
+    [HideInInspector] public float currentMoveSpeed;
+    [HideInInspector] public float currentMight;
+    [HideInInspector] public float currentProjectileSpeed;
+    [HideInInspector] public float currentMagnet;
 
-    //повышение уровня
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     [Header("Experience/Level")]
     public int experience = 0;
     public int level = 1;
@@ -38,6 +38,7 @@ public class PlayerStats : MonoBehaviour
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentMagnet = characterData.Magnet;
     }
 
     void Start()
@@ -45,8 +46,11 @@ public class PlayerStats : MonoBehaviour
         experienceCap = levelRanges[0].experienceCapIncrease;
     }
 
+    
+
     void Update()
     {
+        Recover();
         if(invincibilityTimer > 0)
         {
             invincibilityTimer -= Time.deltaTime;
@@ -65,7 +69,7 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    //Повышение уровня
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     void LevelUpChecker()
     {
         if (experience >= experienceCap)
@@ -86,8 +90,20 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void Recover()
+    {
+        if (currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
 
-    //СМЕРТЬ
+            if (currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
+    }
+
+    //пїЅпїЅпїЅпїЅпїЅпїЅ
     public void TakeDamage(float dmg)
     {
         if(!isInvincible)
@@ -106,7 +122,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Kill()
     {
-        Debug.Log("ИГРОК УМЕР");
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
     }
     //i-frames
     [Header("I-Frames")]

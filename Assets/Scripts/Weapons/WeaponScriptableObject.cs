@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "WeaponScriptableObject", menuName = "ScriptableObjects/Weapon")]
 public class WeaponScriptableObject : ScriptableObject
 {
-    [SerializeField] 
+    [SerializeField]
     GameObject prefab;
     public GameObject Prefab { get => prefab; private set => prefab = value; }
 

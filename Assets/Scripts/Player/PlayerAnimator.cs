@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
@@ -34,7 +32,7 @@ public class PlayerAnimator : MonoBehaviour
 
     void SpritDirectionChecker()
     {
-        if(pm.lastHorizontalVector < 0)
+        if (pm.lastHorizontalVector < 0)
         {
             sr.flipX = false;
         }
