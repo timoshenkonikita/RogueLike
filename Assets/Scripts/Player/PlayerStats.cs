@@ -1,17 +1,17 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
-
+    
     //текущие характеристики
-    float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
-    float currentMight;
-    float currentProjectileSpeed;
+    [HideInInspector] public float currentHealth;
+    [HideInInspector] public float currentRecovery;
+    [HideInInspector] public float currentMoveSpeed;
+    [HideInInspector] public float currentMight;
+    [HideInInspector] public float currentProjectileSpeed;
+    [HideInInspector] public float currentMagnet;
 
     //повышение уровн€
     [Header("Experience/Level")]
@@ -36,11 +36,17 @@ public class PlayerStats : MonoBehaviour
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentMagnet = characterData.Magnet;
     }
 
     void Start()
     {
         experienceCap = levelRanges[0].experienceCapIncrease;
+    }
+
+    private void Update()
+    {
+        Recover();
     }
 
     public void IncreaseExperience(int amount)
@@ -72,6 +78,18 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void Recover()
+    {
+        if(currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
+
+            if (currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
+    }
 
     //—ћ≈–“№
     public void TakeDamage(float dmg)

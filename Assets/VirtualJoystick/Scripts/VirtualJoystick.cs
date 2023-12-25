@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Terresquall {
+namespace Terresquall
+{
 
     [System.Serializable]
     [RequireComponent(typeof(Image),typeof(RectTransform))]

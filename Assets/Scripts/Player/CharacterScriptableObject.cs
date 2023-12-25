@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterScriptableObject", menuName = "ScriptableObject/Character")]
@@ -28,4 +26,8 @@ public class CharacterScriptableObject : ScriptableObject
     [SerializeField]
     float projectileSpeed;
     public float ProjectileSpeed { get => projectileSpeed; private set => projectileSpeed = value; }
+
+    [SerializeField]
+    float magnet;
+    public float Magnet { get => magnet; private set => magnet = value; }
 }

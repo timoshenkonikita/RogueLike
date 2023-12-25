@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using UnityEditor;
-using System.Linq;
-using System.Collections.Generic;
+﻿using UnityEditor;
+using UnityEngine;
 
-namespace Terresquall {
+namespace Terresquall
+{
     [CustomEditor(typeof(VirtualJoystick))]
     public class VirtualJoystickEditor : Editor {    //    // Links to the script object.
 

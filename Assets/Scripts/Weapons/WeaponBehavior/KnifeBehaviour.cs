@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KnifeBehaviour : ProjectileWeaponBehaviour
@@ -12,6 +10,6 @@ public class KnifeBehaviour : ProjectileWeaponBehaviour
 
     void Update()
     {
-        transform.position += direction * weaponData.Speed * Time.deltaTime;    //Set the movement of the knife
+        transform.position += direction * currentSpeed * Time.deltaTime;    //Set the movement of the knife
     }
 }
