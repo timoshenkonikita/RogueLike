@@ -7,8 +7,9 @@ namespace Terresquall
 {
 
     [System.Serializable]
-    [RequireComponent(typeof(Image),typeof(RectTransform))]
-    public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
+    [RequireComponent(typeof(Image), typeof(RectTransform))]
+    public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    {
 
         public Image controlStick;
 
@@ -21,10 +22,10 @@ namespace Terresquall
         public Color dragColor = new Color(0.9f, 0.9f, 0.9f, 1f);
         //[Tooltip("Sets the joystick back to its original position once it is let go of")] public bool snapToOrigin = false;
         public float sensitivity = 2f;
-        [Range(0,2)] public float radius = 0.7f;
-        [Range(0,1)] public float deadzone = 0.3f;
+        [Range(0, 2)] public float radius = 0.7f;
+        [Range(0, 1)] public float deadzone = 0.3f;
 
-        [Tooltip("Joystick only snaps when at the edge")] 
+        [Tooltip("Joystick only snaps when at the edge")]
         public bool edgeSnap;
         [Tooltip("Number of directions of the joystick. " +
             "\nKeep at 0 for a free joystick. " +
@@ -45,19 +46,27 @@ namespace Terresquall
         public const string DATE = "30 April 2023";
 
         // Gets us the number of active joysticks on the screen.
-        public static int CountActiveInstances() {
+        public static int CountActiveInstances()
+        {
             int count = 0;
-            foreach(VirtualJoystick j in instances) {
+            foreach (VirtualJoystick j in instances)
+            {
                 if (j.isActiveAndEnabled) count++;
             }
             return count;
         }
 
-        public static float GetAxis(string axe, int index = 0) {
-            switch(axe.ToLower()) {
-                case "horizontal": case "h": case "x":
+        public static float GetAxis(string axe, int index = 0)
+        {
+            switch (axe.ToLower())
+            {
+                case "horizontal":
+                case "h":
+                case "x":
                     return instances[index].axis.x;
-                case "vertical": case "v": case "y":
+                case "vertical":
+                case "v":
+                case "y":
                     return instances[index].axis.y;
             }
             return 0;
@@ -65,13 +74,15 @@ namespace Terresquall
 
         public static Vector2 GetAxis(int index = 0) { return instances[index].axis; }
 
-        public static float GetAxisRaw(string axe, int index = 0) {
+        public static float GetAxisRaw(string axe, int index = 0)
+        {
             float f = GetAxis(axe, index);
             if (Mathf.Approximately(f, 0)) return 0;
-            return Mathf.Sign(GetAxis(axe,index));
+            return Mathf.Sign(GetAxis(axe, index));
         }
 
-        public static Vector2 GetAxisRaw(int index = 0) {
+        public static Vector2 GetAxisRaw(int index = 0)
+        {
             return new Vector2(
                 Mathf.Approximately(instances[index].axis.x, 0) ? 0 : Mathf.Sign(instances[index].axis.x),
                 Mathf.Approximately(instances[index].axis.y, 0) ? 0 : Mathf.Sign(instances[index].axis.y)
@@ -79,21 +90,24 @@ namespace Terresquall
         }
 
         // Get the radius of this joystick.
-        public float GetRadius() {
+        public float GetRadius()
+        {
             RectTransform t = transform as RectTransform;
-            if(t) return radius * t.rect.width * 0.5f;
+            if (t) return radius * t.rect.width * 0.5f;
             return radius;
         }
 
         // Hook this function to the Drag event of an EventTrigger.
-        public void OnPointerDown(PointerEventData data) {
+        public void OnPointerDown(PointerEventData data)
+        {
             currentPointerId = data.pointerId;
             SetPosition(data.position);
             controlStick.color = dragColor;
         }
 
         // Hook this to the EndDrag event of an EventTrigger.
-        public void OnPointerUp(PointerEventData data) {
+        public void OnPointerUp(PointerEventData data)
+        {
             desiredPosition = transform.position;
             controlStick.color = originalColor;
             currentPointerId = -2;
@@ -105,24 +119,33 @@ namespace Terresquall
             }*/
         }
 
-        protected void SetPosition(Vector2 position) {
+        protected void SetPosition(Vector2 position)
+        {
             // Gets the difference in position between where we want to be,
             // and the center of the joystick.
             Vector2 diff = position - (Vector2)transform.position;
 
             //if no directions to snap to, joystick moves freely.
-            if(directions <= 0){
+            if (directions <= 0)
+            {
                 // Clamp the desired position within the radius.
                 desiredPosition = (Vector2)transform.position + Vector2.ClampMagnitude(diff, GetRadius());
-            } else {
+            }
+            else
+            {
                 // calculate nearest snap directional vectors
                 Vector2 snapDirection = SnapDirection(diff.normalized, directions, 360 / directions * Mathf.Deg2Rad);
-                if ((diff / GetRadius()).magnitude > deadzone) {
+                if ((diff / GetRadius()).magnitude > deadzone)
+                {
                     // Clamp the desired position within the radius and snapped to directional vector
                     desiredPosition = (Vector2)transform.position + snapDirection * GetRadius();
-                } else if (!edgeSnap) {
+                }
+                else if (!edgeSnap)
+                {
                     desiredPosition = position;
-                } else {
+                }
+                else
+                {
                     // Snaps to directional vector within the magnitude of the input position and the joystick
                     desiredPosition = (Vector2)transform.position + snapDirection * diff.magnitude;
                 }
@@ -130,7 +153,8 @@ namespace Terresquall
         }
 
         // Calculates nearest directional snap vector to the actual directional vector of the joystick
-        private Vector2 SnapDirection(Vector2 vector, int directions, float symmetryAngle) {
+        private Vector2 SnapDirection(Vector2 vector, int directions, float symmetryAngle)
+        {
             //Gets the line of symmetry between 2 snap directions
             Vector2 symmetryLine = new Vector2(Mathf.Cos(symmetryAngle), Mathf.Sin(symmetryAngle));
 
@@ -145,7 +169,8 @@ namespace Terresquall
             angle = (angle >= 0f) ? Mathf.Floor(angle) : Mathf.Ceil(angle);
 
             // Checks if angle is odd
-            if ((int)Mathf.Abs(angle) % 2 == 1) {
+            if ((int)Mathf.Abs(angle) % 2 == 1)
+            {
                 // Adds or subtracts 1 to ensure that angle is always even.
                 angle += (angle >= 0f) ? 1 : -1;
             }
@@ -162,11 +187,14 @@ namespace Terresquall
         }
 
         // Loops through children to find an appropriate component to put in.
-        void Reset() {
-            for(int i = 0; i < transform.childCount; i++) {
+        void Reset()
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
                 // Once we find an appropriate Image component, abort.
                 Image img = transform.GetChild(i).GetComponent<Image>();
-                if(img) {
+                if (img)
+                {
                     controlStick = img;
                     break;
                 }
@@ -174,15 +202,18 @@ namespace Terresquall
         }
 
         // Function for us to modify the bounds value in future.
-        public Rect GetBounds() {
+        public Rect GetBounds()
+        {
             return new Rect(boundaries.x, boundaries.y, Screen.width * boundaries.width, Screen.height * boundaries.height);
         }
 
-        void OnDrawGizmosSelected() {
+        void OnDrawGizmosSelected()
+        {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, GetRadius());
 
-            if(GetBounds().size.sqrMagnitude > 0) {
+            if (GetBounds().size.sqrMagnitude > 0)
+            {
                 // Draw the lines of the bounds.
                 Gizmos.color = Color.yellow;
 
@@ -200,7 +231,8 @@ namespace Terresquall
             Gizmos.color = Color.green;
         }
 
-        void Start() {
+        void Start()
+        {
 
             // If we are not on mobile, and this is mobile only, disable.
             if (!Application.isMobilePlatform && onlyOnMobile)
@@ -213,22 +245,29 @@ namespace Terresquall
             instances.Insert(0, this);
         }
 
-        void Update() {
+        void Update()
+        {
             PositionUpdate();
 
             // If the currentPointerId > -2, we are being dragged.
-            if(currentPointerId > -2) {
+            if (currentPointerId > -2)
+            {
                 // If this is more than -1, the Joystick is manipulated by touch.
-                if(currentPointerId > -1) {
+                if (currentPointerId > -1)
+                {
                     // We need to loop through all touches to find the one we want.
-                    for(int i = 0; i < Input.touchCount; i++) {
+                    for (int i = 0; i < Input.touchCount; i++)
+                    {
                         Touch t = Input.GetTouch(i);
-                        if(t.fingerId == currentPointerId) {
+                        if (t.fingerId == currentPointerId)
+                        {
                             SetPosition(t.position);
                             break;
                         }
                     }
-                } else {
+                }
+                else
+                {
                     // Otherwise, we are being manipulated by the mouse position.
                     SetPosition(Input.mousePosition);
                 }
@@ -239,55 +278,65 @@ namespace Terresquall
 
             // If the joystick is moved less than the dead zone amount, it won't register.
             axis = (controlStick.transform.position - transform.position) / GetRadius();
-            if (axis.magnitude < deadzone) axis = Vector2.zero;               
+            if (axis.magnitude < deadzone) axis = Vector2.zero;
 
             // If debug is on, output to selected channel.
             string output = string.Format("Virtual Joystick: {0}", axis);
-            if(consolePrintAxis) Debug.Log(output);
-            if(UITextPrintAxis) UITextPrintAxis.text = output;
+            if (consolePrintAxis) Debug.Log(output);
+            if (UITextPrintAxis) UITextPrintAxis.text = output;
         }
 
-        void PositionUpdate() {
+        void PositionUpdate()
+        {
 
-            if(Input.touchCount > 0) {
+            if (Input.touchCount > 0)
+            {
                 // Also detect touch events too.
-                for(int i = 0; i < Input.touchCount; i++) {
+                for (int i = 0; i < Input.touchCount; i++)
+                {
                     Touch t = Input.GetTouch(i);
-                    switch(t.phase) {
+                    switch (t.phase)
+                    {
                         case TouchPhase.Began:
-                            if(GetBounds().Contains(t.position) && currentPointerId < -1) {
+                            if (GetBounds().Contains(t.position) && currentPointerId < -1)
+                            {
                                 Uproot(t.position, t.fingerId);
                                 return;
                             }
                             break;
                         case TouchPhase.Ended:
                         case TouchPhase.Canceled:
-                            if(currentPointerId == t.fingerId)
+                            if (currentPointerId == t.fingerId)
                                 OnPointerUp(new PointerEventData(EventSystem.current));
                             break;
                     }
                 }
 
-            } else if(Input.GetMouseButtonDown(0) && currentPointerId < -1) {
-                if(GetBounds().Contains(Input.mousePosition)) {
+            }
+            else if (Input.GetMouseButtonDown(0) && currentPointerId < -1)
+            {
+                if (GetBounds().Contains(Input.mousePosition))
+                {
                     Uproot(Input.mousePosition);
                 }
             }
-            
-            if(Input.GetMouseButtonUp(0) && currentPointerId == -1) {
+
+            if (Input.GetMouseButtonUp(0) && currentPointerId == -1)
+            {
                 OnPointerUp(new PointerEventData(EventSystem.current));
             }
         }
 
         // Roots the joystick to a new position.
-        public void Uproot(Vector2 newPos, int newPointerId = -1) {
+        public void Uproot(Vector2 newPos, int newPointerId = -1)
+        {
             // Don't move the joystick if we are not tapping too far from it.
-            if(Vector2.Distance(transform.position, newPos) < radius) return;
+            if (Vector2.Distance(transform.position, newPos) < radius) return;
 
             // Otherwise move the virtual joystick to where we clicked.
             transform.position = newPos;
             desiredPosition = transform.position;
-                    
+
             // Artificially trigger the drag event.
             PointerEventData data = new PointerEventData(EventSystem.current);
             data.position = newPos;
@@ -296,5 +345,5 @@ namespace Terresquall
         }
     }
 
-    
+
 }

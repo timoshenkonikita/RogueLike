@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 3296487958587398381}
   - component: {fileID: 3296487958587398382}
   - component: {fileID: 1825351360477734072}
+  - component: {fileID: -70619807204975920}
+  - component: {fileID: -3544337113693599843}
+  - component: {fileID: -3298101884141893930}
   m_Layer: 0
   m_Name: "\u041A\u0440\u0430\u0441\u043D\u044B\u0439\u041F\u0430\u0436\u0438\u043B\u043E\u0439\u041F\u0430\u0432\u0443\u043A"
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,3 +134,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7333333, y: 2.8666666}
   m_EdgeRadius: 0
+--- !u!114 &-70619807204975920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296487958587398383}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8254a1e45d97d4cbd3f72018f027e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3544337113693599843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296487958587398383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5577be5c5a34a6e4f9c9abff044aa4ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: d0d8078b5e8fd6b419eb7cabd1cbd087, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
+--- !u!114 &-3298101884141893930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296487958587398383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba2b887419d4f841b68ae72c5ed5068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Blue orb
+    itemPrefab: {fileID: 7785088367298977619, guid: c18aed80f4d39974985df08fe37b0fbc, type: 3}
+    dropRate: 100

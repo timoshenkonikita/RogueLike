@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
-    
+
     //текущие характеристики
     [HideInInspector] public float currentHealth;
     [HideInInspector] public float currentRecovery;
@@ -80,7 +80,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Recover()
     {
-        if(currentHealth < characterData.MaxHealth)
+        if (currentHealth < characterData.MaxHealth)
         {
             currentHealth += currentRecovery * Time.deltaTime;
 
