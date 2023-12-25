@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using UnityEngine;
 public class GarlicBehavior : MeleeWeaponBehaviour
 {
     List<GameObject> markedEnemies;
@@ -8,7 +10,6 @@ public class GarlicBehavior : MeleeWeaponBehaviour
         markedEnemies = new List<GameObject>();
     }
 
-<<<<<<< HEAD
     protected override void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
@@ -28,7 +29,4 @@ public class GarlicBehavior : MeleeWeaponBehaviour
             }
         }
     }
-=======
-
->>>>>>> origin/eded
 }

@@ -1,4 +1,4 @@
-using Terresquall;
+п»їusing Terresquall;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -44,13 +44,13 @@ public class PlayerMovement : MonoBehaviour
         if (moveDir.x != 0)
         {
             lastHorizontalVector = moveDir.x;
-            lastMovedVector = new Vector2(lastHorizontalVector, 0f); //последнее передвижение по x
+            lastMovedVector = new Vector2(lastHorizontalVector, 0f); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ x
         }
 
         if (moveDir.y != 0)
         {
             lastVerticalVector = moveDir.y;
-            lastMovedVector = new Vector2(0f, lastVerticalVector); //последнее передвижение по y
+            lastMovedVector = new Vector2(0f, lastVerticalVector); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ y
         }
 
         if (moveDir.x != 0 && moveDir.y != 0)

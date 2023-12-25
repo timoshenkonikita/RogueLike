@@ -123,7 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1 &180762829 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3296487958587398383, guid: ed7fb4326db8fa04b8aff0867980ba21, type: 3}
@@ -141,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8254a1e45d97d4cbd3f72018f027e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 59e3ada4bc3d1fe49a85e4ab4929981a, type: 2}
 --- !u!114 &180762837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,8 +156,6 @@ MonoBehaviour:
   - name: Blue orb
     itemPrefab: {fileID: 7785088367298977619, guid: c18aed80f4d39974985df08fe37b0fbc, type: 3}
     dropRate: 100
-=======
->>>>>>> origin/eded
 --- !u!1 &199616820
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +212,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &263024594
 GameObject:
@@ -256,13 +252,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263024594}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3933dc90bf205d408dad2751a442edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 08c5310f67e6de741bee32923b7f9d8f, type: 2}
-<<<<<<< HEAD
 --- !u!1001 &314928905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,8 +328,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: -1525392332127535099, guid: ed7fb4326db8fa04b8aff0867980ba21, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed7fb4326db8fa04b8aff0867980ba21, type: 3}
-=======
->>>>>>> origin/eded
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +490,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &601471875
 PrefabInstance:
@@ -659,7 +652,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.6
 --- !u!114 &627944807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,7 +731,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107963680
 GameObject:
@@ -756,7 +749,6 @@ GameObject:
   - component: {fileID: 1107963688}
   - component: {fileID: 1107963687}
   - component: {fileID: 1107963681}
-  - component: {fileID: 1107963688}
   - component: {fileID: 1107963689}
   m_Layer: 0
   m_Name: "\u0421\u0432\u044F\u0449\u0435\u043D\u0438\u043A_3"
@@ -890,7 +882,7 @@ Transform:
   - {fileID: 1184367847}
   - {fileID: 627944805}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1107963686
 Animator:
@@ -942,11 +934,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: b1a415cf7cbc41f49aa9dad68e3bb475, type: 2}
-<<<<<<< HEAD
-  experience: 0
-  level: 1
-  experienceCap: 100
-=======
   currentHealth: 0
   currentRecovery: 0
   currentMoveSpeed: 0
@@ -956,7 +943,6 @@ MonoBehaviour:
   experience: 0
   level: 1
   experienceCap: 0
->>>>>>> origin/eded
   levelRanges:
   - startLevel: 1
     endLevel: 3
@@ -964,7 +950,6 @@ MonoBehaviour:
   - startLevel: 4
     endLevel: 5
     experienceCapIncrease: 200
-<<<<<<< HEAD
   invincibilityDuration: 0.5
 --- !u!114 &1107963689
 MonoBehaviour:
@@ -978,8 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceefc4f399be2c346b4ac2951730416a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> origin/eded
+  pullSpeed: 300
 --- !u!1 &1184367846
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1184367847
 Transform:
   m_ObjectHideFlags: 0
@@ -1018,7 +1002,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184367846}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 295db63db6d7b5c4bb55ff442843c88c, type: 3}
   m_Name: 
@@ -1127,7 +1111,7 @@ RectTransform:
   m_Children:
   - {fileID: 1621255919}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1224,7 +1208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1993709746425295968, guid: 566408a3506607044ac67eabf82c3dc9, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1993709746425295968, guid: 566408a3506607044ac67eabf82c3dc9, type: 3}
       propertyPath: m_LocalPosition.x

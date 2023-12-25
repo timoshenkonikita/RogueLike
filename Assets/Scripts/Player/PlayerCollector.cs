@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerCollector : MonoBehaviour
 {
     PlayerStats stats;
-    CircleCollider2D collector;
+    public CircleCollider2D collector;
     public float pullSpeed;
 
     private void Start()
