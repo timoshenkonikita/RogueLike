@@ -31,6 +31,8 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {
+        characterData = CharacterSelector.GetData();
+
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
