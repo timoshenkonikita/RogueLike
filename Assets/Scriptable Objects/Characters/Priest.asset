@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819652fb5230cf7488c39bf3317c2cde, type: 3}
   m_Name: Priest
   m_EditorClassIdentifier: 
-  startingWeapon: {fileID: 0}
+  startingWeapon: {fileID: 6999926843030184956, guid: 0b1c58e6f04d18242a5f9e6ec48ed53f, type: 3}
   maxHealth: 1000
   recovery: 0
   moveSpeed: 5
   might: 0
   projectileSpeed: 0
+  magnet: 0

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819652fb5230cf7488c39bf3317c2cde, type: 3}
   m_Name: Fortune teller
   m_EditorClassIdentifier: 
-  startingWeapon: {fileID: 0}
+  startingWeapon: {fileID: 3507717453570321981, guid: e9b8a3777afc66845b9666023afe7f29, type: 3}
   maxHealth: 0
   recovery: 0
   moveSpeed: 0
   might: 0
   projectileSpeed: 0
+  magnet: 0
