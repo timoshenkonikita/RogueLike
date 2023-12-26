@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3296487958587398381}
   - component: {fileID: 3296487958587398382}
   - component: {fileID: 1825351360477734072}
-  - component: {fileID: -1525392332127535099}
+  - component: {fileID: 388451518750824982}
   - component: {fileID: -4712515432270229846}
+  - component: {fileID: -662836378837582255}
   m_Layer: 0
   m_Name: "\u041F\u0430\u0436\u0438\u043B\u043E\u0439\u041F\u0430\u0432\u0443\u043A"
   m_TagString: Enemy
@@ -120,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.2654704, y: -0.028155923}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,9 +132,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7333333, y: 2.8666666}
+  m_Size: {x: 2.1541247, y: 2.102434}
   m_EdgeRadius: 0
---- !u!114 &-1525392332127535099
+--- !u!114 &388451518750824982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,3 +162,19 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+--- !u!114 &-662836378837582255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296487958587398383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba2b887419d4f841b68ae72c5ed5068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Blue orb
+    itemPrefab: {fileID: 7785088367298977619, guid: c18aed80f4d39974985df08fe37b0fbc, type: 3}
+    dropRate: 100

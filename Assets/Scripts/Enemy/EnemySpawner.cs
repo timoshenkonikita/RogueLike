@@ -9,29 +9,32 @@ public class EnemySpawner : MonoBehaviour
     {
         public string waveName;
         public List<EnemyGroup> enemyGroups;
-        public int waveQuota;
-        public float spawnInterval;
-        public int spawnCount;
+        public float spawnInterval; //интервал спавна
+        public int waveQuota; //сколько всего нужно заспавнить
+        public int spawnCount; //сколько заспавнило
     }
 
     [System.Serializable]
     public class EnemyGroup
     {
         public string enemyName;
-        public int enemyCount;
-        public int spawnCount;
-        public GameObject enemyPrefab;
+        public int enemyCount; //количество всех врагов в волне
+        public int spawnCount; //количество заспавненных врагов (меняется во время игры)
+        public GameObject enemyPrefab; //кого спавнить
     }
 
     public List<Wave> waves;
-    public int currentWaveCount;
+    public int currentWaveCount; //счётчик пройденных волн
 
     [Header("Spawner Attributes")]
     float spawnTimer;
-    public int enemiesAlive;
-    public int maxEnemiesAllowed;
-    public bool maxEnemiesReached = false;
+    public int enemiesAlive; //считает количество живых врагов (меняется во время игры)
+    public int maxEnemiesAllowed; //максимальное количество живых врагов которые могут существовать одновременно
+    public bool maxEnemiesReached = false; //проверка
     public float waveInterval;
+
+    [Header("Spawn Positions")]
+    public List<Transform> relativeSpawnPoints;
 
     Transform player;
 
@@ -95,8 +98,7 @@ public class EnemySpawner : MonoBehaviour
                         return;
                     }
 
-                    Vector2 spawnPosition = new Vector2(player.transform.position.x + Random.Range(-10f, 10f), player.transform.position.y + Random.Range(-10f, 10f));
-                    Instantiate(enemyGroup.enemyPrefab, spawnPosition, Quaternion.identity);
+                    Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
 
                     enemyGroup.spawnCount++;
                     waves[currentWaveCount].spawnCount++;
