@@ -14,7 +14,6 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector] public float currentProjectileSpeed;
     [HideInInspector] public float currentMagnet;
 
-    public List<GameObject> spawnedWeapons;
 
     //повышение уровня
     [Header("Experience/Level")]
@@ -30,12 +29,24 @@ public class PlayerStats : MonoBehaviour
         public int experienceCapIncrease;
     }
 
+    //i-frames
+    [Header("I-Frames")]
+    public float invincibilityDuration;
+    float invincibilityTimer;
+    bool isInvincible;
+
     public List<LevelRange> levelRanges;
+
+    InventoryManager inventory;
+    public int weaponIndex;
+
 
     void Awake()
     {
         characterData = CharacterSelector.GetData();
         CharacterSelector.instance.DestroySingleton();
+
+        inventory = GetComponent<InventoryManager>();
 
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
@@ -107,12 +118,7 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log("ИГРОК УМЕР");
     }
-    //i-frames
-    [Header("I-Frames")]
-    public float invincibilityDuration;
-    float invincibilityTimer;
-    bool isInvincible;
-
+    
     public void RestoreHealth(float amount)
     {
         if(currentHealth > characterData.MaxHealth)
@@ -140,9 +146,15 @@ public class PlayerStats : MonoBehaviour
 
     public void SpawnWeapon(GameObject weapon)
     {
+        if(weaponIndex >= inventory.weaponSlots.Count - 1)
+        {
+            Debug.LogError("Слоты инвентаря заполнены");
+            return;
+        }
         GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
         spawnedWeapon.transform.SetParent(transform);
-        spawnedWeapons.Add(spawnedWeapon);
+        inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<WeaponController>());
 
+        weaponIndex++;
     }
 }

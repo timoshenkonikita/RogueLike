@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6056241487335257186}
   - component: {fileID: 3335547881313830773}
   m_Layer: 0
-  m_Name: "\u0421\u0432\u044F\u0442\u0430\u044F \u0432\u043E\u0434\u0430"
+  m_Name: "\u0421\u0432\u044F\u0442\u0430\u044F \u0432\u043E\u0434\u0430 Level 2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c90516448242a4496c3293df57cd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 062ce8b144bbc9d45adf4f03d6fe10df, type: 2}
+  weaponData: {fileID: 11400000, guid: 6713734f96ca2ea409f9ca9df8a6194d, type: 2}
   destroyAfterSeconds: 2
 --- !u!58 &3335547881313830773
 CircleCollider2D:

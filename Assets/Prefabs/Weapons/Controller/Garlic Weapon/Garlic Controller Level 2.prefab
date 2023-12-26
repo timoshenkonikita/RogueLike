@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6999926843030184957}
   - component: {fileID: 6999926843030184946}
   m_Layer: 0
-  m_Name: Garlic Controller
+  m_Name: Garlic Controller Level 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295db63db6d7b5c4bb55ff442843c88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 062ce8b144bbc9d45adf4f03d6fe10df, type: 2}
+  weaponData: {fileID: 11400000, guid: 6713734f96ca2ea409f9ca9df8a6194d, type: 2}
