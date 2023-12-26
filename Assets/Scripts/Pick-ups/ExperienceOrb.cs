@@ -5,10 +5,10 @@ using UnityEngine;
 public class ExperienceOrb : Pickup, ICollectable
 {
     public int experienceGranted;
+
     public void Collect()
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseExperience(experienceGranted);
-        Destroy(gameObject);
     }
 }
